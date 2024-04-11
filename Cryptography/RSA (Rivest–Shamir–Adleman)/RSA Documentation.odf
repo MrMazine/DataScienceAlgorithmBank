@@ -1,0 +1,26 @@
+#### RSA Encryption/Decryption Program Documentation
+
+This program is a simple implementation of the RSA encryption and decryption algorithm. It is written in C and uses basic mathematical operations to perform encryption and decryption of numeric messages.
+
+Here's a breakdown of the code:
+
+1. **Header Files**
+   - `stdio.h`: This header file is included for input/output operations in the program.
+   - `stdlib.h`: This header file is included for general purpose functions.
+   - `math.h`: This header file is included for mathematical operations.
+
+2. **Functions**
+   - `checkPrime(int n)`: This function checks if a number `n` is prime. It returns 1 if the number is prime, and 0 otherwise.
+   - `findGCD(int n1, int n2)`: This function finds the greatest common divisor (GCD) of two numbers `n1` and `n2`.
+   - `powMod(int a, int b, int n)`: This function calculates the value of `(a^b) mod n` using a fast exponentiation method.
+
+3. **Main Program**
+   - The main program starts by asking the user to input two prime numbers. It checks if the numbers are prime, and if not, it asks the user to input the numbers again.
+   - It then calculates the product of the two prime numbers (`n`) and the Euler's totient function (`phin`).
+   - The program then finds an `e` such that `e` is relatively prime to `phin`.
+   - It also calculates a `d` such that `(d * e) mod phin = 1`.
+   - The user is then asked to input a numeric message to be encrypted.
+   - The program encrypts the message using the RSA encryption formula `cipher = (data^e) mod n` and displays the encrypted text.
+   - It then decrypts the encrypted message using the RSA decryption formula `decrypt = (cipher^d) mod n` and displays the original text.
+
+**Note**: This program only works with numeric input and the prime numbers must be chosen such that their product is greater than the numeric message to be encrypted. Also, the program does not handle errors or exceptions, so it's important to input the data as requested by the program prompts.
